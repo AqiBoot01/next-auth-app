@@ -1,6 +1,6 @@
 import { signIn, signOut, useSession } from "next-auth/react";
 
-const index = () => {
+const Index = () => {
   const session = useSession();
 
   if ((session?.data === null) & (session?.status === "unauthenticated")) {
@@ -9,10 +9,10 @@ const index = () => {
     return (
       <>
         <h1>Welcome to Auth page {session?.data?.user?.name}</h1>
-        <button onClick={signOut}></button>
+        <button onClick={signOut}>Signout</button>
       </>
     );
   }
 };
 
-export default index;
+export default Index;
